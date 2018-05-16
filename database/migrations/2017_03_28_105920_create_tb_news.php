@@ -16,7 +16,6 @@ class CreateTbNews extends Migration
             $table->smallInteger('id_category')->default('1');
             $table->string('title');
             $table->text('content');
-            $table->string('image');
             $table->string('keyword');
             $table->string('slug');
             $table->boolean('status')->default(true);

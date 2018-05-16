@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Posts extends Model
 {
-     protected $table = 'tb_admin';
+     protected $table = 'users';
 }

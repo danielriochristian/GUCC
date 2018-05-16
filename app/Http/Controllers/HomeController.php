@@ -31,8 +31,8 @@ class HomeController extends Controller
             ->take(8)
             ->get();
        	return view('home', compact(
-            'news', 
-            'headline', 
+            'news',
+            'headline',
             'slider',
             'study'));
     }

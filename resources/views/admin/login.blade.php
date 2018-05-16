@@ -64,7 +64,7 @@
 											<div class="space-6"></div>
 
 											<form class="form-horizontal" role="form" method="POST" action="attempt">
-           									 {{ csrf_field() }}
+												{{ csrf_field() }}
            									 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 												<fieldset >
 													<label class="block clearfix" {{ $errors->has('username') ? ' has-error' : '' }}>

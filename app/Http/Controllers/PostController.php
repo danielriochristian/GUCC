@@ -10,9 +10,15 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+  
   public function index(){
     $post = Posts::paginate(4);
-    return view('post.index',compact('post'));
+    return view('partial.menu_admin',compact('post'));
   }
 
   public function addPost(Request $request){
@@ -28,6 +34,8 @@ class PostController extends Controller
     $post = new Posts;
     $post->admin_user = $request->admin_user;
     $post->admin_password = $request->admin_password;
+    $post->admin_role = $request->admin_role;
+    $post->status = $request->status;
     $post->save();
     return response()->json($post);
   }

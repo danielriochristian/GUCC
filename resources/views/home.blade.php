@@ -1,7 +1,7 @@
-<!-- 
+<!--
 
 Author : Hasan El Jabir
-Date   : 17-09-2017 
+Date   : 17-09-2017
 
 -->
 
@@ -19,8 +19,8 @@ Date   : 17-09-2017
 </head>
 
 <body>
-    <div class="wm-main-wrapper">   
-        
+    <div class="wm-main-wrapper">
+
         @include('partial.header')
 
         @include('partial.menu')
@@ -36,7 +36,7 @@ Date   : 17-09-2017
         @include('student')
 
         @include('partial.footer')
-        
+
     </div>
 
     @include('script.js')

@@ -27,6 +27,27 @@ Route::get('professional', 'ProfessionalController@index');
 Route::get('signin', 'BackStageController@setView')->name('signin.setView');
 Route::post('attempt', 'BackStageController@submit');
 
+
+Auth::routes();
+Route::post('manageslider2','BackStageController@store');
+Route::resource('manageslider','ManageSliderController');
+
+Route::get('tampil','ManageSliderController@tampil');
+
+
+//Route Article
+Route::get('managearticle','ManageArticleController@index');
+Route::get('managearticle/create','ManageArticleController@create');
+Route::post('addarticle','ManageArticleController@store');
+Route::get('managearticle/{id}/edit','ManageArticleController@edit');
+Route::put('managearticle/{id}','ManageArticleController@update');
+Route::delete('managearticle/{id}','ManageArticleController@destroy');
+
+
+
+Route::resource('manageevent','ManageEventController');
+//Route::get('new','ManageEventController@show');
+
 Route::group(['middleware' => ['web']], function() {
   Route::resource('nosuchfile','PostController');
   Route::POST('addPost','PostController@addPost');
