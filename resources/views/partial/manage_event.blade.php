@@ -1,4 +1,6 @@
+<!-- Falah 14 04 2018-->
 {{-- calling admin \ admin.blade.php --}}
+
 @extends('admin.admin')
 @section('manage_event')
 
@@ -6,17 +8,19 @@
       <div class="box-header">
 
       	<div class="form-group">
-      	<a href="/manageevent/new">
+      	<a href="/manageevent/create">
       	<button class="btn btn-primary" type="submit" id="new" > New Event</button>
       	</a>
   		</div>
   		    <table class="table table-bordered" id="table-data">
   		      <thead>
   			      <tr>
-  			        <th>no</th>
-  			        <th>Id Category</th>
+  			        <th>#</th>
+                <th>Tanggal</th>
   			        <th>Judul</th>
+                <th>Content</th>
   			        <th>Status</th>
+                <th>Tempat</th>
   			        <th>Created At</th>
   			        <th colspan="2">Aksi</th>
   			      </tr>
@@ -24,11 +28,16 @@
   		      @foreach($manages as $manage)
   		      <tr>
   		      	<td> {{ $manage-> id }} </td>
-  		      	<td> {{ $manage-> id_category }} </td>
+  		      	<td> {{ $manage-> date }} </td>
   		      	<td> {{ $manage-> title }} </td>
-  		      	<td> {{ $manage-> status }} </td>
-  		      	<td> {{ $manage-> created_at }} </td>
-  		      	<td>
+  		      	<td> {!! $manage-> content !!} </td>
+              <td> @if ($manage->status==1) Aktif
+                   @else tidak aktif
+                   @endif
+              </td>
+              <td> {{ $manage-> place }} </td>
+              <td> {{ $manage-> created_at }} </td>
+              <td>
   		      		<a href="/manageevent/{{ $manage->id }}/edit">
   		      		<button class="btn btn-success" type="submit" id="new"> Edit </button> </a>
 
@@ -40,6 +49,10 @@
   		      		 <button class="btn btn-danger" type="submit" id="new"> Delete </button>
   		      		</form>
   		      	</td>
+              <td>
+                <a href="/manageevent/{{ $manage->id }}">
+                <button class="btn btn-primary" type="submit" id="new"> View </button> </a>
+              </td>
   		      </tr>
   		      @endforeach
   		    </table>

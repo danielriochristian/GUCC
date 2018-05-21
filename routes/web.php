@@ -40,13 +40,20 @@ Route::get('managearticle','ManageArticleController@index');
 Route::get('managearticle/create','ManageArticleController@create');
 Route::post('addarticle','ManageArticleController@store');
 Route::get('managearticle/{id}/edit','ManageArticleController@edit');
+Route::get('managearticle/{id}/view','ManageArticleController@view');
 Route::put('managearticle/{id}','ManageArticleController@update');
 Route::delete('managearticle/{id}','ManageArticleController@destroy');
 
+//Route Event
+Route::get('manageevent','ManageEventController@index');
+Route::get('manageevent/create','ManageEventController@create');
+Route::post('addevent','ManageEventController@store');
+Route::get('manageevent/{id}/edit','ManageEventController@edit');
+Route::put('manageevent/{id}','ManageEventController@update');
+Route::delete('manageevent/{id}','ManageEventController@destroy');
+Route::get('manageevent/{id}','ManageEventController@show');
 
 
-Route::resource('manageevent','ManageEventController');
-//Route::get('new','ManageEventController@show');
 
 Route::group(['middleware' => ['web']], function() {
   Route::resource('nosuchfile','PostController');

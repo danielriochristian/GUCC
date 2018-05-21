@@ -74,6 +74,11 @@ class ManageArticleController extends Controller
         return redirect('managearticle')->with('message','data berhasil dihapus!!');
     }
 
+    public function view(){
+      $manages = ManageArticle::all();
+        return view('partial.view_article', ['manages' => $manages]);
+    }
+
 
 
 }

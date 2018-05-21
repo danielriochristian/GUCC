@@ -20,7 +20,7 @@
 			        <th>Status</th>
               <th>Keyword</th>
 			        <th>Tanggal</th>
-			        <th colspan="2">Aksi</th>
+			        <th colspan="3">Aksi</th>
 			      </tr>
 		      </thead>
 		      @foreach($manages as $manage)
@@ -44,6 +44,10 @@
       					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 		      		  <button class="btn btn-danger" type="submit" id="new"> Delete </button>
 		      		</form>
+		      	</td>
+            <td>
+		      		<a href="/managearticle/{{ $manage->id }}/view" method="post">
+		      		  <button class="btn btn-info" type="submit" id="new"> View </button>
 		      	</td>
 		      </tr>
 		      @endforeach
