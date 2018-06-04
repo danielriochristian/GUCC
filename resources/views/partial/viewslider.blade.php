@@ -9,7 +9,7 @@
     <div class="box-header">
 
       <div class="form-group">
-        <textarea name="image" class="form-control my-editor">  <img src="/photos/1/{{ $manages->image }}"> </textarea>
+        <textarea name="image" class="form-control my-editor">  <img src="{{$manages->image}}"> </textarea>
       </div>
       <hr>
       <div class="form-group">

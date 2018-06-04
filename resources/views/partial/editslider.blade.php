@@ -17,8 +17,9 @@
 		<input type="text" class="form-control" name="content" placeholder="Gunadarma" value="{{ $manages->content }}">
 	</div>
 	<div class="form-group">
-		<label> Image </label>
-    <img src="{{$manages->image}}" alt="" height="200px;">
+		<label> Image </label> <br>
+    <img src="{{$manages->image}}" alt="" height="200px;"> <br>
+    <input type="file" accept="image/jpeg,image/tiff,image/x-png" id="tes" name="tes">
 	</div>
   <div class="form-group">
 		<label> Link </label>
@@ -29,7 +30,7 @@
 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 		<button class="btn btn-success" type="submit" id="new"> Edit </button>
 	</form>
-		<a href="/managearticle/">
+		<a href="/manageslider">
 		<button class="btn btn-danger" type="submit" id="new"> Cancel </button>
 		</a>
 	</div>

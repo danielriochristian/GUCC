@@ -15,7 +15,7 @@ class PostController extends Controller
   {
       $this->middleware('auth');
   }
-  
+
   public function index(){
     $post = Posts::paginate(4);
     return view('partial.menu_admin',compact('post'));
@@ -32,9 +32,9 @@ class PostController extends Controller
 
   else {
     $post = new Posts;
-    $post->admin_user = $request->admin_user;
-    $post->admin_password = $request->admin_password;
-    $post->admin_role = $request->admin_role;
+    $post->name = $request->admin_user;
+    $post->password = $request->admin_password;
+    $post->roles_id = 1;
     $post->status = $request->status;
     $post->save();
     return response()->json($post);

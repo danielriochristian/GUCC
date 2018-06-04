@@ -8,7 +8,7 @@
 <body>
 <div class="box box-primary">
     <div class="box-header">
-    <form action="/manageslider2" enctype="multipart/form-data" method="post">
+    <form action="/addslider" enctype="multipart/form-data" method="post">
     	<div class="form-group">
 		<label> Title Slider </label>
 		<input type="text" id="title" name="title" class="form-control" placeholder="Slider Title">
@@ -64,7 +64,7 @@
           </form>
         </td>
         <td>
-          <a href="/manageslider/{{ $manage->id }}">
+          <a href="/manageslider/{{ $manage->id }}/view">
           <button class="btn btn-primary" type="submit" id="new"> View </button> </a>
         </td>
       </tr>

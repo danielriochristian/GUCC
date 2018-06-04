@@ -22,6 +22,7 @@ class ManageSliderController extends Controller
     public function show($id)
     {
         $manages = ManageSlider::find($id);
+        
         return view('partial.viewslider')->with('manages',$manages);
     }
 
@@ -37,32 +38,61 @@ class ManageSliderController extends Controller
 
     public function update(Request $request, $id)
     {
-            //$this->validate($request, [
-            //'title'   => 'required',
-            //'subject' => 'required', ]);
+      if ($request->hasFile('tes')) {
+         $namafile = $request->file('tes')->getClientOriginalName();
+         $ext = $request->file('tes')->getClientOriginalExtension();
+         $lokasifileskr = '/photos/'.$namafile;
+         //cek jika file sudah ada...
+         if ($ext == "png" ||
+             $ext == "jpg")
+         {
+           $destinasi = public_path('/photos');
+           $proses = $request->file('tes')->move($destinasi,$namafile);
+
+           $manages = new ManageSlider;
+           $manages->title = $request->title;
+           $manages->content = $request->content;
+           $manages->link = $request->link;
+           $manages->image = $lokasifileskr;
+           $manages->save();
 
 
-        $manages = ManageSlider::find($id);
-        $manages->title = $request->title;
-        $manages->content = $request->content;
-        $manages->link = $request->link;
-        $manages->image = $request->image;
-        $manages->save();
-
-        return redirect('manageslider')->with('message','data berhasil ditambahkan!!');
+           return redirect('manageslider')->with('message','data berhasil ditambahkan!!');
+         }
+         else {
+           return Redirect::back()->withErrors(['file tidak sesuai, tidak bisa diupload']);
+         }
+       }
     }
 
-    public function store(Request $request)
-    {
-        $manages = new ManageSlider;
-        $manages->title = $request->title;
-        $manages->content = $request->content;
-        $manages->link = $request->link;
-        $manages->image = $request->image;
-        $manages->save();
+      public function store(Request $request)
+      {
+        if ($request->hasFile('tes')) {
+           $namafile = $request->file('tes')->getClientOriginalName();
+           $ext = $request->file('tes')->getClientOriginalExtension();
+           $lokasifileskr = '/photos/'.$namafile;
+           //cek jika file sudah ada...
+           if ($ext == "png" ||
+               $ext == "jpg")
+           {
+             $destinasi = public_path('/photos');
+             $proses = $request->file('tes')->move($destinasi,$namafile);
 
-        return redirect('manageslider')->with('message','data berhasil ditambahkan!!');
-    }
+             $manages = new ManageSlider;
+             $manages->title = $request->title;
+             $manages->content = $request->content;
+             $manages->link = $request->link;
+             $manages->image = $lokasifileskr;
+             $manages->save();
+
+
+             return redirect('manageslider')->with('message','data berhasil ditambahkan!!');
+           }
+           else {
+             return Redirect::back()->withErrors(['file tidak sesuai, tidak bisa diupload']);
+           }
+         }
+       }
 
     public function destroy($id)
     {

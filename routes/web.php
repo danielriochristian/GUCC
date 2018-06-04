@@ -29,10 +29,19 @@ Route::post('attempt', 'BackStageController@submit');
 
 
 Auth::routes();
-Route::post('manageslider2','BackStageController@store');
-Route::resource('manageslider','ManageSliderController');
 
-Route::get('tampil','ManageSliderController@tampil');
+//Route::resource('manageslider','ManageSliderController');
+
+//Route Slider
+Route::get('manageslider','ManageSliderController@index');
+// Route::get('manageslier/create','ManageSliderController@create');//store
+Route::post('addslider','ManageSliderController@store');//ganti
+Route::get('manageslider/{id}/view','ManageSliderController@show');
+Route::get('manageslider/{id}/edit','ManageSliderController@edit');
+Route::put('manageslider/{id}','ManageSliderController@update');
+Route::delete('manageslider/{id}','ManageSliderController@destroy');
+
+// Route::get('tampil','ManageSliderController@tampil');
 
 
 //Route Article
@@ -53,8 +62,15 @@ Route::put('manageevent/{id}','ManageEventController@update');
 Route::delete('manageevent/{id}','ManageEventController@destroy');
 Route::get('manageevent/{id}','ManageEventController@show');
 
+//Route help
+Route::get('help','HelpController@index');
+Route::get('help/create','HelpController@create');
+Route::post('addfaq','HelpController@store');
+Route::get('help/{id}/edit','HelpController@edit');
+Route::put('help/{id}','HelpController@update');
+Route::delete('help/{id}','HelpController@destroy');
 
-
+//Route admin
 Route::group(['middleware' => ['web']], function() {
   Route::resource('nosuchfile','PostController');
   Route::POST('addPost','PostController@addPost');

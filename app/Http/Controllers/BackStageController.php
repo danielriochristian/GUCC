@@ -28,32 +28,5 @@ class BackStageController extends Controller
             return redirect()->action('PostController@index');
     }
 
-    public function store(Request $request)
-    {
-      if ($request->hasFile('tes')) {
-         $namafile = $request->file('tes')->getClientOriginalName();
-         $ext = $request->file('tes')->getClientOriginalExtension();
-         $lokasifileskr = '/photos/'.$namafile;
-         //cek jika file sudah ada...
-         if ($ext == "png" ||
-             $ext == "jpg")
-         {
-           $destinasi = public_path('/photos');
-           $proses = $request->file('tes')->move($destinasi,$namafile);
-
-           $manages = new ManageSlider;
-           $manages->title = $request->title;
-           $manages->content = $request->content;
-           $manages->link = $request->link;
-           $manages->image = $lokasifileskr;
-           $manages->save();
-
-
-           return redirect('manageslider')->with('message','data berhasil ditambahkan!!');
-         }
-         else {
-           return Redirect::back()->withErrors(['file tidak sesuai, tidak bisa diupload']);
-         }
-       }
-     }
+    
 }
