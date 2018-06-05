@@ -108,7 +108,7 @@
       </form>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" >
+      <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
 
         <li class="form-group">
@@ -129,12 +129,20 @@
             <span class="pull-right-container">
             </span>
           </a>
-          <li class="form-group">
+          <li class="treeview">
             <a href="/manageevent">
               <i class="fa fa-calendar"></i> <span>Manage Event</span>
               <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
+            <ul class="treeview-menu">
+              <li><a href="/manageevent"><i class="fa fa-circle-o"></i> All Event </a></li>
+              <li><a href="/upcomingevent"><i class="fa fa-circle-o"></i> Up Coming event</a></li>
+              <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+              <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+            </ul>
+            </li>
           <li class="form-group">
             <a href="/help">
               <i class="fa fa-question-circle-o"></i> <span>Help</span>
@@ -186,6 +194,7 @@
           @yield('help')
           @yield('new_help')
           @yield('edit_help')
+          @yield('upcoming_event')
 
 
           <!-- quick email widget -->
