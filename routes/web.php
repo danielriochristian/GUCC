@@ -72,7 +72,8 @@ Route::delete('upcomingevent/{id}','upcomingeventController@destroy');
 Route::get('upcomingevent/{id}','upcomingeventController@show');
 
 //Route help
-Route::get('help','HelpController@index');
+// Route::get('/', 'HelpController@getRoot');
+Route::get('help','HelpController@getRoot');
 Route::get('help/create','HelpController@create');
 Route::post('addfaq','HelpController@store');
 Route::get('help/{id}/edit','HelpController@edit');

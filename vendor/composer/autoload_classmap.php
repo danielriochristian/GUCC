@@ -22,6 +22,7 @@ return array(
     'CreateTbMetaData' => $baseDir . '/database/migrations/2017_03_28_110105_create_tb_meta_data.php',
     'CreateTbNews' => $baseDir . '/database/migrations/2017_03_28_105920_create_tb_news.php',
     'CreateTbProfile' => $baseDir . '/database/migrations/2017_03_28_104343_create_tb_profile.php',
+    'CreateTbQuestion' => $baseDir . '/database/migrations/2018_06_05_162008_create_tb_question.php',
     'CreateTbSlider' => $baseDir . '/database/migrations/2017_03_28_110147_create_tb_slider.php',
     'CreateTbStudent' => $baseDir . '/database/migrations/2017_03_28_110157_create_tb_student.php',
     'CreateTbStudyProgram' => $baseDir . '/database/migrations/2017_03_28_110135_create_tb_study_program.php',

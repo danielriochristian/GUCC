@@ -32,8 +32,8 @@
     </a>
     <div class="collapse in">
       <div class="panel-body">
-        <p>{{$manage->answer}}</p>
-        <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+        {{-- <p>{{$manage->answer}}</p> --}}
+        <p><strong>Answer: </strong>{{$manage->answer}}</p>
 
       </div>
 
@@ -44,7 +44,7 @@
 @endforeach
 <div class="form-group">
 <a href="help1/create">
-<button class="btn btn-primary" type="submit" id="new" > New FAQ </button>
+<button class="btn btn-primary" type="submit" id="new" > Add Question </button>
 </a>
 </div>
 
