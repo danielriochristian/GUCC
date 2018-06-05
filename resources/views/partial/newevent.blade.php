@@ -22,7 +22,7 @@
 		<!--<div class="form-group">
 			<label> Kategori </label>
 			<select class="form-control" id="kategori">
-		        <option value="bevent">Event</option>
+		        <option value="event">Event</option>
 		        </select>
 		</div> -->
 		<!--<div class="form-group">

@@ -62,6 +62,15 @@ Route::put('manageevent/{id}','ManageEventController@update');
 Route::delete('manageevent/{id}','ManageEventController@destroy');
 Route::get('manageevent/{id}','ManageEventController@show');
 
+//Route upcoming Event
+Route::get('upcomingevent','upcomingeventController@index');
+Route::get('upcomingevent/create','upcomingeventController@create');
+Route::post('addevent','upcomingeventController@store');
+Route::get('upcomingevent/{id}/edit','upcomingeventController@edit');
+Route::put('upcomingevent/{id}','upcomingeventController@update');
+Route::delete('upcomingevent/{id}','upcomingeventController@destroy');
+Route::get('upcomingevent/{id}','upcomingeventController@show');
+
 //Route help
 Route::get('help','HelpController@index');
 Route::get('help/create','HelpController@create');
