@@ -70,6 +70,11 @@ Route::get('help/{id}/edit','HelpController@edit');
 Route::put('help/{id}','HelpController@update');
 Route::delete('help/{id}','HelpController@destroy');
 
+
+//Route help manager
+Route::get('help1','HelpController@manager');
+Route::get('help1/create','HelpController@createmanager');
+
 //Route admin
 Route::group(['middleware' => ['web']], function() {
   Route::resource('nosuchfile','PostController');

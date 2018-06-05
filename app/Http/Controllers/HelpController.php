@@ -31,6 +31,11 @@ class HelpController extends Controller
   {
       return view('partial.addhelp');
   }
+  public function createmanager()
+  {
+      return view('partial.question');
+  }
+
   public function store(Request $request)
   {
          $manages = new Help;
@@ -68,6 +73,12 @@ class HelpController extends Controller
      $manages = Help::find($id);
        $manages->delete();
        return redirect('help')->with('message','data berhasil dihapus!!');
+   }
+
+   public function manager()
+   {
+     $manages = help::all();
+     return view('partial.manager', ['manages' => $manages]);
    }
 
 }
