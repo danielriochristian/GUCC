@@ -17,8 +17,15 @@ class CreateTbEvent extends Migration
     public function up()
     {
         Schema::create('tb_event', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+          $table->increments('id');
+          // $table->smallInteger('id_category')->default('1');
+          $table->string('title');
+          $table->text('content');
+          $table->date('date');
+          $table->string('place');
+          $table->timestamps();
+          $table->softDeletes();
+          $table->smallInteger('status');
         });
     }
 
