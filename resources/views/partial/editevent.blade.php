@@ -21,17 +21,13 @@
 		<input type="text" class="form-control" name="title" placeholder="Masukan title" value="{{ $manages->title }}">
 	</div>
 
-	<div class="form-group">
-		<label> Status </label>
-		<div class="form-check">
-				 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-				 <label class="form-check-label" for="exampleRadios1"> Aktif </label>
-				</div>
-				<div class="form-check">
-				 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-				 <label class="form-check-label" for="exampleRadios2"> Tidak Aktif </label>
-			</div>
-	</div>
+  <div class="form-group">
+    <label>Status</label>
+    <select class="form-control" name="status">
+        <option value="1">Aktif</option>
+        <option value="0">Tidak Aktif</option>
+        </select>
+  </div>
   <div class="form-group">
 		<label> Content</label>
 		<textarea name="content"  placeholder="Masukan subject">{{ $manages->content }} </textarea>

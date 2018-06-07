@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\ManageEvent;
 use App\Http\Requests;
+use DB;
 
 class PastEventController extends Controller
 {
@@ -15,7 +16,7 @@ class PastEventController extends Controller
   }
     public function index()
     {
-    	$manages = ManageEvent::all();
+    	$manages = DB::table('tb_event')->where('status','=','0')->get();
         return view('partial.past_event', ['manages' => $manages]);
     }
 
@@ -67,7 +68,7 @@ class PastEventController extends Controller
         $manages->title = $request->title;
         $manages->content = $request->content;
         // $manages->id_category = 1;
-        $manages->status = 1;
+        $manages->status = $request->status;
         $manages->date = $request->date ;
         $manages->place = $request->place;
         //$manages->slug = str_slug($request->title);

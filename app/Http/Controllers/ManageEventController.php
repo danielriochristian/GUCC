@@ -45,7 +45,7 @@ class ManageEventController extends Controller
            $manages->title = $request->title;
            $manages->content = $request->content;
            // $manages->id_category = 1;
-           $manages->status = 1;
+           $manages->status = $request->status;
            $manages->date = $request->date ;
            $manages->place = $request->place;
            //$manages->slug = str_slug($request->title);
@@ -67,7 +67,7 @@ class ManageEventController extends Controller
         $manages->title = $request->title;
         $manages->content = $request->content;
         // $manages->id_category = 1;
-        $manages->status = 1;
+        $manages->status = $request->status;
         $manages->date = $request->date ;
         $manages->place = $request->place;
         //$manages->slug = str_slug($request->title);

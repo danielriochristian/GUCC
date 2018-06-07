@@ -20,6 +20,6 @@ class EventController extends Controller
     public function show($id)
     {
         $manages = Event::find($id);
-        return view('event_detail')->with('manages',$manages);
+        return view('event_detail', ['manages' => $manages]);
     }
 }

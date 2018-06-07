@@ -28,7 +28,7 @@ Falah : 14-05-2018
                       <p style="color:#fff;">{!! $manage->content !!}</p>
                     </div>
                     <span style="color:#424242;">{!! $manage->place !!}</span>
-                    <div class="wm-banner-adds-inner"> <a href="{{ url('Event/'.$evnt->id) }}" class="wm-classic-button wm-bgcolor-two">See Event</a> </div>
+                    {{-- <div class="wm-banner-adds-inner"> <a href="{{ url('Event/'.$evnt->id) }}" class="wm-classic-button wm-bgcolor-two">See Event</a> </div> --}}
                   </div>
                 @endforeach
               </div>

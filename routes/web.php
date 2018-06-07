@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@index');
 
 Route::get('news/{id}', 'NewsController@index');
 Route::get('slider/{id}', 'SliderController@index');
+Route::get('Event/{id}', 'EventController@show');
 
 Route::get('profile', 'ProfileController@index');
 Route::get('history', 'ProfileController@history');
