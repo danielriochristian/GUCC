@@ -138,9 +138,9 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="/manageevent"><i class="fa fa-circle-o"></i> All Event </a></li>
-              <li><a href="/upcomingevent"><i class="fa fa-circle-o"></i> Up Coming event</a></li>
-              <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-              <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+              <li><a href="/upcoming"><i class="fa fa-circle-o"></i> Up Coming event</a></li>
+              <li><a href="/pastevent"><i class="fa fa-circle-o"></i> Past Event</a></li>
+              {{-- <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li> --}}
             </ul>
             </li>
           <li class="form-group">
@@ -195,6 +195,7 @@
           @yield('new_help')
           @yield('edit_help')
           @yield('upcoming_event')
+          @yield ('past_event')
 
 
           <!-- quick email widget -->

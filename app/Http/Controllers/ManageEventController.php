@@ -44,7 +44,7 @@ class ManageEventController extends Controller
            $manages = new ManageEvent;
            $manages->title = $request->title;
            $manages->content = $request->content;
-           $manages->id_category = 1;
+           // $manages->id_category = 1;
            $manages->status = 1;
            $manages->date = $request->date ;
            $manages->place = $request->place;
@@ -66,7 +66,7 @@ class ManageEventController extends Controller
         $manages = ManageEvent::find($id);
         $manages->title = $request->title;
         $manages->content = $request->content;
-        $manages->id_category = 1;
+        // $manages->id_category = 1;
         $manages->status = 1;
         $manages->date = $request->date ;
         $manages->place = $request->place;

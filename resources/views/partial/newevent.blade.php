@@ -25,7 +25,7 @@
 		        <option value="event">Event</option>
 		        </select>
 		</div> -->
-		<!--<div class="form-group">
+		<div class="form-group">
 			<label>Status</label>
 				<div class="form-check">
 				 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
@@ -35,7 +35,7 @@
 				 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
 				 <label class="form-check-label" for="exampleRadios2"> Tidak Aktif </label>
 			</div>
-		</div> -->
+		</div>
     <div class="form-group">
       <label> Content </label>
 			<textarea name="content" id="content"> </textarea>

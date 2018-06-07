@@ -63,13 +63,22 @@ Route::delete('manageevent/{id}','ManageEventController@destroy');
 Route::get('manageevent/{id}','ManageEventController@show');
 
 //Route upcoming Event
-Route::get('upcomingevent','upcomingeventController@index');
-Route::get('upcomingevent/create','upcomingeventController@create');
-Route::post('addevent','upcomingeventController@store');
-Route::get('upcomingevent/{id}/edit','upcomingeventController@edit');
-Route::put('upcomingevent/{id}','upcomingeventController@update');
-Route::delete('upcomingevent/{id}','upcomingeventController@destroy');
-Route::get('upcomingevent/{id}','upcomingeventController@show');
+Route::get('upcoming','upcomingeventController@index');
+Route::get('upcoming/create','upcomingeventController@create');
+Route::post('addupcomingevent','upcomingeventController@store');
+Route::get('upcoming/{id}/edit','upcomingeventController@edit');
+Route::put('upcoming/{id}','upcomingeventController@update');
+Route::delete('upcoming/{id}','upcomingeventController@destroy');
+Route::get('upcoming/{id}','upcomingeventController@show');
+
+//Route Past Event
+Route::get('pastevent','pasteventController@index');
+// Route::get('pastevent/create','pasteventeventController@create');
+// Route::post('addpasteventevent','pasteventeventController@store');
+Route::get('pastevent/{id}/edit','pasteventController@edit');
+Route::put('pastevent/{id}','pasteventController@update');
+Route::delete('pastevent/{id}','pasteventController@destroy');
+Route::get('pastevent/{id}','pasteventController@show');
 
 //Route help
 Route::get('help','HelpController@index');
