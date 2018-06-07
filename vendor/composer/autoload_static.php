@@ -323,6 +323,7 @@ class ComposerStaticInit8780af04c4baeb8668db9c501d63eec9
         'CreateTbMetaData' => __DIR__ . '/../..' . '/database/migrations/2017_03_28_110105_create_tb_meta_data.php',
         'CreateTbNews' => __DIR__ . '/../..' . '/database/migrations/2017_03_28_105920_create_tb_news.php',
         'CreateTbProfile' => __DIR__ . '/../..' . '/database/migrations/2017_03_28_104343_create_tb_profile.php',
+        'CreateTbQuestion' => __DIR__ . '/../..' . '/database/migrations/2018_06_05_162008_create_tb_question.php',
         'CreateTbSlider' => __DIR__ . '/../..' . '/database/migrations/2017_03_28_110147_create_tb_slider.php',
         'CreateTbStudent' => __DIR__ . '/../..' . '/database/migrations/2017_03_28_110157_create_tb_student.php',
         'CreateTbStudyProgram' => __DIR__ . '/../..' . '/database/migrations/2017_03_28_110135_create_tb_study_program.php',

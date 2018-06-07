@@ -81,7 +81,8 @@ Route::delete('pastevent/{id}','pasteventController@destroy');
 Route::get('pastevent/{id}','pasteventController@show');
 
 //Route help
-Route::get('help','HelpController@index');
+// Route::get('/', 'HelpController@getRoot');
+Route::get('help','HelpController@getRoot');
 Route::get('help/create','HelpController@create');
 Route::post('addfaq','HelpController@store');
 Route::get('help/{id}/edit','HelpController@edit');

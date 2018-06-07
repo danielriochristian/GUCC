@@ -32,9 +32,8 @@
     </a>
     <div class="collapse in">
       <div class="panel-body">
-        <p>{{$manage->answer}}</p>
-        <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
-
+        {{-- <p>{{$manage->answer}}</p> --}}
+        <p><strong>Answer: </strong>{{$manage->answer}}</p>
         <a href="/help/{{ $manage->id }}/edit">
         <button class="btn btn-success" type="submit" id="new" style="float:left;"> Edit </button> </a>
 
@@ -56,6 +55,31 @@
 </a>
 </div>
 
+{{-- <hr>
+<div class="form-group">
+  <h4>#Question To Answer</h1>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+    <th> Question </th>
+    <th> Create At </th>
+    <th> Action </th>
+  </thead>
+   @foreach ($questions as $question)
+   <tr>
+    <td> {{ $question-> question }} </td>
+    <td> {{ $question-> created_at }} </td>
+    <td>
+      <form action="/manageslider/{{ $question->id }}" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <button class="btn btn-danger" type="submit" id="new"> Delete </button>
+      </form>
+    </td>
+  </tr>
+  @endforeach
+</table> --}}
   </div>
 </div>
 

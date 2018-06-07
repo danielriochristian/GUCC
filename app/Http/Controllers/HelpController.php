@@ -7,25 +7,36 @@ use App\Http\Controllers\Controller;
 use App\Models\Help;
 use App\Http\Requests;
 use DB;
+use Auth;
 
 class HelpController extends Controller
 {
-  public function getRoleAdmin() {
-      $rolesyangberhak = DB::table('roles')->where('id','=','2')->get()->first()->namaRule;
-      return $rolesyangberhak;
-    }
+  // public function getRoleAdmin() {
+  //     $rolesyangberhak = DB::table('roles')->where('id','=','2')->get()->first()->namaRule;
+  //     return $rolesyangberhak;
+  //   }
 
   public function __construct()
    {
        $this->middleware('auth');
-       $this->middleware('rule:'.$this->getRoleAdmin());
+       // $this->middleware('rule:'.$this->getRoleAdmin());
    }
-
-  public function index()
-  {
-    $manages = help::all();
-      return view('partial.help', ['manages' => $manages]);
-  }
+   public function getRoot() {
+       if (Auth::User()->roles_id == 1) {
+         $manages = help::all();
+         return view('partial.manager', ['manages' => $manages]);
+       } elseif (Auth::User()->roles_id == 2) {
+         $manages = help::all();
+         return view('partial.help', ['manages' => $manages]);
+       } else {
+         return 'hai pengguna! saat ini belom ada view nya karena yg buat males nambahin :V buat logout ketik /logout di akhiran lalu enter';
+       }
+     }
+  // public function index()
+  // {
+  //   $manages = help::all();
+  //     return view('partial.help', ['manages' => $manages]);
+  // }
 
   public function create()
   {
